@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F76B3F2B1A6662AD004135D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B3F2A1A6662AD004135D3 /* main.m */; };
+		F76B3F2E1A6662AD004135D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B3F2D1A6662AD004135D3 /* AppDelegate.m */; };
+		F76B3F311A6662AD004135D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B3F301A6662AD004135D3 /* ViewController.m */; };
+		F76B3F341A6662AD004135D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F76B3F321A6662AD004135D3 /* Main.storyboard */; };
+		F76B3F361A6662AD004135D3 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F76B3F351A6662AD004135D3 /* Images.xcassets */; };
+		F76B3F391A6662AD004135D3 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F76B3F371A6662AD004135D3 /* LaunchScreen.xib */; };
+		F76B3F451A6662AD004135D3 /* CustomVideoCaptureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F76B3F441A6662AD004135D3 /* CustomVideoCaptureTests.m */; };
+		F76B3F4F1A6662F9004135D3 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76B3F4E1A6662F9004135D3 /* MediaPlayer.framework */; };
+		F76B3F511A666301004135D3 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76B3F501A666301004135D3 /* CoreMedia.framework */; };
+		F76B3F531A666308004135D3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76B3F521A666308004135D3 /* QuartzCore.framework */; };
+		F76B3F551A66630E004135D3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F76B3F541A66630E004135D3 /* AVFoundation.framework */; };
+		F790A12E1A68F70100551946 /* UIImage+Rotate.m in Sources */ = {isa = PBXBuildFile; fileRef = F790A12D1A68F70100551946 /* UIImage+Rotate.m */; };
+		F7CE580A1A6CF57E002F7510 /* DBPlayVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CE58091A6CF57E002F7510 /* DBPlayVideoVC.m */; };
+		F7CE580F1A6CF65C002F7510 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F7CE580C1A6CF65C002F7510 /* SVProgressHUD.bundle */; };
+		F7CE58101A6CF65C002F7510 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CE580E1A6CF65C002F7510 /* SVProgressHUD.m */; };
+		F7E5F3331A67931E0007C744 /* DBTabkePhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */; };
+		F7E5F3361A67932B0007C744 /* DBTakeVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F76B3F3F1A6662AD004135D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F76B3F1D1A6662AD004135D3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F76B3F241A6662AD004135D3;
+			remoteInfo = CustomVideoCapture;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F76B3F251A6662AD004135D3 /* CustomVideoCapture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CustomVideoCapture.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76B3F291A6662AD004135D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76B3F2A1A6662AD004135D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		F76B3F2C1A6662AD004135D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		F76B3F2D1A6662AD004135D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		F76B3F2F1A6662AD004135D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		F76B3F301A6662AD004135D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F76B3F331A6662AD004135D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F76B3F351A6662AD004135D3 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F76B3F381A6662AD004135D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		F76B3F3E1A6662AD004135D3 /* CustomVideoCaptureTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomVideoCaptureTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F76B3F431A6662AD004135D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F76B3F441A6662AD004135D3 /* CustomVideoCaptureTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomVideoCaptureTests.m; sourceTree = "<group>"; };
+		F76B3F4E1A6662F9004135D3 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		F76B3F501A666301004135D3 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		F76B3F521A666308004135D3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		F76B3F541A66630E004135D3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		F790A12C1A68F70100551946 /* UIImage+Rotate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Rotate.h"; sourceTree = "<group>"; };
+		F790A12D1A68F70100551946 /* UIImage+Rotate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Rotate.m"; sourceTree = "<group>"; };
+		F7CE58081A6CF57E002F7510 /* DBPlayVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBPlayVideoVC.h; sourceTree = "<group>"; };
+		F7CE58091A6CF57E002F7510 /* DBPlayVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBPlayVideoVC.m; sourceTree = "<group>"; };
+		F7CE580C1A6CF65C002F7510 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		F7CE580D1A6CF65C002F7510 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		F7CE580E1A6CF65C002F7510 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		F7E5F3311A67931E0007C744 /* DBTabkePhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTabkePhotoVC.h; sourceTree = "<group>"; };
+		F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTabkePhotoVC.m; sourceTree = "<group>"; };
+		F7E5F3341A67932B0007C744 /* DBTakeVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTakeVideoVC.h; sourceTree = "<group>"; };
+		F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTakeVideoVC.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F76B3F221A6662AD004135D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76B3F551A66630E004135D3 /* AVFoundation.framework in Frameworks */,
+				F76B3F531A666308004135D3 /* QuartzCore.framework in Frameworks */,
+				F76B3F511A666301004135D3 /* CoreMedia.framework in Frameworks */,
+				F76B3F4F1A6662F9004135D3 /* MediaPlayer.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76B3F3B1A6662AD004135D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F76B3F1C1A6662AD004135D3 = {
+			isa = PBXGroup;
+			children = (
+				F76B3F541A66630E004135D3 /* AVFoundation.framework */,
+				F76B3F521A666308004135D3 /* QuartzCore.framework */,
+				F76B3F501A666301004135D3 /* CoreMedia.framework */,
+				F76B3F4E1A6662F9004135D3 /* MediaPlayer.framework */,
+				F76B3F271A6662AD004135D3 /* CustomVideoCapture */,
+				F76B3F411A6662AD004135D3 /* CustomVideoCaptureTests */,
+				F76B3F261A6662AD004135D3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F76B3F261A6662AD004135D3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F76B3F251A6662AD004135D3 /* CustomVideoCapture.app */,
+				F76B3F3E1A6662AD004135D3 /* CustomVideoCaptureTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F76B3F271A6662AD004135D3 /* CustomVideoCapture */ = {
+			isa = PBXGroup;
+			children = (
+				F76B3F2C1A6662AD004135D3 /* AppDelegate.h */,
+				F76B3F2D1A6662AD004135D3 /* AppDelegate.m */,
+				F76B3F2F1A6662AD004135D3 /* ViewController.h */,
+				F76B3F301A6662AD004135D3 /* ViewController.m */,
+				F76B3F321A6662AD004135D3 /* Main.storyboard */,
+				F7E5F3311A67931E0007C744 /* DBTabkePhotoVC.h */,
+				F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */,
+				F7E5F3341A67932B0007C744 /* DBTakeVideoVC.h */,
+				F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */,
+				F7CE58081A6CF57E002F7510 /* DBPlayVideoVC.h */,
+				F7CE58091A6CF57E002F7510 /* DBPlayVideoVC.m */,
+				F7CE580B1A6CF650002F7510 /* Tools */,
+				F76B3F351A6662AD004135D3 /* Images.xcassets */,
+				F76B3F371A6662AD004135D3 /* LaunchScreen.xib */,
+				F76B3F281A6662AD004135D3 /* Supporting Files */,
+			);
+			path = CustomVideoCapture;
+			sourceTree = "<group>";
+		};
+		F76B3F281A6662AD004135D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F76B3F291A6662AD004135D3 /* Info.plist */,
+				F76B3F2A1A6662AD004135D3 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F76B3F411A6662AD004135D3 /* CustomVideoCaptureTests */ = {
+			isa = PBXGroup;
+			children = (
+				F76B3F441A6662AD004135D3 /* CustomVideoCaptureTests.m */,
+				F76B3F421A6662AD004135D3 /* Supporting Files */,
+			);
+			path = CustomVideoCaptureTests;
+			sourceTree = "<group>";
+		};
+		F76B3F421A6662AD004135D3 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				F76B3F431A6662AD004135D3 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F7CE580B1A6CF650002F7510 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F7CE580C1A6CF65C002F7510 /* SVProgressHUD.bundle */,
+				F7CE580D1A6CF65C002F7510 /* SVProgressHUD.h */,
+				F7CE580E1A6CF65C002F7510 /* SVProgressHUD.m */,
+				F790A12C1A68F70100551946 /* UIImage+Rotate.h */,
+				F790A12D1A68F70100551946 /* UIImage+Rotate.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F76B3F241A6662AD004135D3 /* CustomVideoCapture */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76B3F481A6662AD004135D3 /* Build configuration list for PBXNativeTarget "CustomVideoCapture" */;
+			buildPhases = (
+				F76B3F211A6662AD004135D3 /* Sources */,
+				F76B3F221A6662AD004135D3 /* Frameworks */,
+				F76B3F231A6662AD004135D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CustomVideoCapture;
+			productName = CustomVideoCapture;
+			productReference = F76B3F251A6662AD004135D3 /* CustomVideoCapture.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F76B3F3D1A6662AD004135D3 /* CustomVideoCaptureTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F76B3F4B1A6662AD004135D3 /* Build configuration list for PBXNativeTarget "CustomVideoCaptureTests" */;
+			buildPhases = (
+				F76B3F3A1A6662AD004135D3 /* Sources */,
+				F76B3F3B1A6662AD004135D3 /* Frameworks */,
+				F76B3F3C1A6662AD004135D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F76B3F401A6662AD004135D3 /* PBXTargetDependency */,
+			);
+			name = CustomVideoCaptureTests;
+			productName = CustomVideoCaptureTests;
+			productReference = F76B3F3E1A6662AD004135D3 /* CustomVideoCaptureTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F76B3F1D1A6662AD004135D3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = IUAIJIA;
+				TargetAttributes = {
+					F76B3F241A6662AD004135D3 = {
+						CreatedOnToolsVersion = 6.0.1;
+					};
+					F76B3F3D1A6662AD004135D3 = {
+						CreatedOnToolsVersion = 6.0.1;
+						TestTargetID = F76B3F241A6662AD004135D3;
+					};
+				};
+			};
+			buildConfigurationList = F76B3F201A6662AD004135D3 /* Build configuration list for PBXProject "CustomVideoCapture" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F76B3F1C1A6662AD004135D3;
+			productRefGroup = F76B3F261A6662AD004135D3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F76B3F241A6662AD004135D3 /* CustomVideoCapture */,
+				F76B3F3D1A6662AD004135D3 /* CustomVideoCaptureTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F76B3F231A6662AD004135D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76B3F341A6662AD004135D3 /* Main.storyboard in Resources */,
+				F76B3F391A6662AD004135D3 /* LaunchScreen.xib in Resources */,
+				F76B3F361A6662AD004135D3 /* Images.xcassets in Resources */,
+				F7CE580F1A6CF65C002F7510 /* SVProgressHUD.bundle in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76B3F3C1A6662AD004135D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F76B3F211A6662AD004135D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F7E5F3361A67932B0007C744 /* DBTakeVideoVC.m in Sources */,
+				F7CE58101A6CF65C002F7510 /* SVProgressHUD.m in Sources */,
+				F76B3F311A6662AD004135D3 /* ViewController.m in Sources */,
+				F790A12E1A68F70100551946 /* UIImage+Rotate.m in Sources */,
+				F76B3F2E1A6662AD004135D3 /* AppDelegate.m in Sources */,
+				F7CE580A1A6CF57E002F7510 /* DBPlayVideoVC.m in Sources */,
+				F76B3F2B1A6662AD004135D3 /* main.m in Sources */,
+				F7E5F3331A67931E0007C744 /* DBTabkePhotoVC.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F76B3F3A1A6662AD004135D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F76B3F451A6662AD004135D3 /* CustomVideoCaptureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F76B3F401A6662AD004135D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F76B3F241A6662AD004135D3 /* CustomVideoCapture */;
+			targetProxy = F76B3F3F1A6662AD004135D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F76B3F321A6662AD004135D3 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F76B3F331A6662AD004135D3 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F76B3F371A6662AD004135D3 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F76B3F381A6662AD004135D3 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F76B3F461A6662AD004135D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		F76B3F471A6662AD004135D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F76B3F491A6662AD004135D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CustomVideoCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F76B3F4A1A6662AD004135D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = CustomVideoCapture/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		F76B3F4C1A6662AD004135D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CustomVideoCaptureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomVideoCapture.app/CustomVideoCapture";
+			};
+			name = Debug;
+		};
+		F76B3F4D1A6662AD004135D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = CustomVideoCaptureTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CustomVideoCapture.app/CustomVideoCapture";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F76B3F201A6662AD004135D3 /* Build configuration list for PBXProject "CustomVideoCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76B3F461A6662AD004135D3 /* Debug */,
+				F76B3F471A6662AD004135D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76B3F481A6662AD004135D3 /* Build configuration list for PBXNativeTarget "CustomVideoCapture" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76B3F491A6662AD004135D3 /* Debug */,
+				F76B3F4A1A6662AD004135D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F76B3F4B1A6662AD004135D3 /* Build configuration list for PBXNativeTarget "CustomVideoCaptureTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F76B3F4C1A6662AD004135D3 /* Debug */,
+				F76B3F4D1A6662AD004135D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F76B3F1D1A6662AD004135D3 /* Project object */;
+}
