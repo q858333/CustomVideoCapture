@@ -114,7 +114,6 @@
     {
 
         [self startPlay];//开始
-       
 
     }else if ([sender.titleLabel.text isEqualToString:@"重播"])
     {
