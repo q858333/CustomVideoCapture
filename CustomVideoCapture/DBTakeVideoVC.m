@@ -147,8 +147,6 @@
 
 
 
-
-
 -(void)initRecordButton
 {
     UIButton *recordBtn = [UIButton buttonWithType:UIButtonTypeSystem];
@@ -167,7 +165,7 @@
     
     UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [sureBtn setTitle:@"完成" forState:UIControlStateNormal];
-    sureBtn.frame=CGRectMake(0, 360, 320/2, 40);
+    sureBtn.frame=CGRectMake(0, 360, 320, 40);
     [sureBtn addTarget:self action:@selector(sureBtnClick) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:sureBtn];
     
