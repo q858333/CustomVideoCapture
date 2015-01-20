@@ -372,7 +372,9 @@
     }
     
     //get save path
-    NSURL *mergeFileURL = [NSURL fileURLWithPath:[[self class] getVideoMergeFilePathString]];
+    NSString *filePath = [[self class] getVideoMergeFilePathString];
+    
+    NSURL *mergeFileURL = [NSURL fileURLWithPath:filePath];
     
     //export
     AVMutableVideoCompositionInstruction *mainInstruciton = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
@@ -395,6 +397,9 @@
             _finashURL=mergeFileURL;
             NSLog(@"%@",mergeFileURL);
             [SVProgressHUD dismiss];
+            
+            UISaveVideoAtPathToSavedPhotosAlbum(filePath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
+
             
             //            if ([_delegate respondsToSelector:@selector(videoRecorder:didFinishMergingVideosToOutPutFileAtURL:)]) {
             //                [_delegate videoRecorder:self didFinishMergingVideosToOutPutFileAtURL:mergeFileURL];
@@ -472,7 +477,13 @@
 //        [_delegate videoRecorder:self didStartRecordingToOutPutFileAtURL:fileURL];
 //    }
 }
-
+- (void)video:(NSString *)videoPath didFinishSavingWithError:(NSError *)error contextInfo: (void *)contextInfo {
+    
+    NSLog(@"%@",videoPath);
+    
+    NSLog(@"%@",error);
+    
+}
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didFinishRecordingToOutputFileAtURL:(NSURL *)outputFileURL fromConnections:(NSArray *)connections error:(NSError *)error
 {
 

@@ -28,7 +28,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor=[UIColor whiteColor];
+    //存图片
     
+
+
 
     AVURLAsset *movieAsset    = [[AVURLAsset alloc]initWithURL:self.fileURL options:nil];
     
@@ -50,6 +53,14 @@
     [self.player setAllowsExternalPlayback:YES];
     
     
+    UIButton *startBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [startBtn setTitle:@"开始" forState:UIControlStateNormal];
+    startBtn.backgroundColor=[UIColor colorWithWhite:0.5 alpha:0.5];
+    startBtn.frame=self.view.layer.bounds;
+    [startBtn addTarget:self action:@selector(startBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:startBtn];
+    
+    
     _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 20, 0, 20)];
     _progressView.progress=1;
     [self.view addSubview:_progressView];
@@ -68,7 +79,13 @@
     
     // Do any additional setup after loading the view.
 }
+-(void)startBtnClick:(UIButton *)sender
+{
+    [sender setTitle:@"" forState:UIControlStateNormal];
+    sender.backgroundColor=[UIColor clearColor];
+    [self.player play];
 
+}
 - (NSTimeInterval) playableDuration
 {
 
@@ -120,7 +137,7 @@
     {
         if (AVPlayerItemStatusReadyToPlay == self.player.currentItem.status)
         {
-            [self.player play];
+           // [self.player play];
             
             NSLog(@"%lf",[self playableDuration]);
             [UIView animateWithDuration:[self playableDuration] animations:^{
@@ -131,6 +148,8 @@
         }
     }
 }
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

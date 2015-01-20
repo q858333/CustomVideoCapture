@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CustomVideoCapture/DBTabkePhotoVC.m"
-            timestampString = "443342967.96787"
+            timestampString = "443427901.470323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "397"
-            endingLineNumber = "397"
+            startingLineNumber = "396"
+            endingLineNumber = "396"
             landmarkName = "-changeDeviceProperty:"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CustomVideoCapture/DBTabkePhotoVC.m"
-            timestampString = "443342967.96787"
+            timestampString = "443427901.470323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "414"
-            endingLineNumber = "414"
+            startingLineNumber = "413"
+            endingLineNumber = "413"
             landmarkName = "-setFlashMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CustomVideoCapture/DBTabkePhotoVC.m"
-            timestampString = "443342967.96787"
+            timestampString = "443427901.470323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "416"
-            endingLineNumber = "416"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "-setFlashMode:"
             landmarkType = "5">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CustomVideoCapture/DBPlayVideoVC.m"
-            timestampString = "443416603.006633"
+            timestampString = "443427562.607315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "74"
-            endingLineNumber = "74"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "-playableDuration"
             landmarkType = "5">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CustomVideoCapture/DBPlayVideoVC.m"
-            timestampString = "443416603.006633"
+            timestampString = "443427562.607315"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "-playableCurrentTime"
             landmarkType = "5">
          </BreakpointContent>

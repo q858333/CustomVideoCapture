@@ -20,7 +20,7 @@
     uint8_t a = 0;
     int returnValue = SecRandomCopyBytes(kSecRandomDefault, 1, &a);
     
-    NSLog(@"%d",returnValue);
+    NSLog(@"%d",a);
     // Override point for customization after application launch.
     return YES;
 }

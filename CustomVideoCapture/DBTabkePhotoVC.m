@@ -271,17 +271,16 @@
              
              [self.view addSubview:imgView];
              imgView.image=image;
-             //  ;
              
              // = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([image CGImage], CGRectMake(0, 44, 320, 320)) scale:1 orientation:UIImageOrientationRight];
              //             [UIimage imagewidthCGImage:CGImageCreateWidthImageInRec]
              //             [UIimage imagewidthCGImage:CGImageCreateWidthImageInRect:(,矩形)]
              
              
-             // UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
+              UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
              
-             //            ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
-             //            [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
+//                         ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
+//                         [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
              
          }
      }];

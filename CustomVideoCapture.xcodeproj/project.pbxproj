@@ -24,6 +24,7 @@
 		F7CE58101A6CF65C002F7510 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CE580E1A6CF65C002F7510 /* SVProgressHUD.m */; };
 		F7E5F3331A67931E0007C744 /* DBTabkePhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */; };
 		F7E5F3361A67932B0007C744 /* DBTakeVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */; };
+		F7E785F81A6E23F60038716C /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = F7E785F71A6E23F60038716C /* 1.mp4 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTabkePhotoVC.m; sourceTree = "<group>"; };
 		F7E5F3341A67932B0007C744 /* DBTakeVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTakeVideoVC.h; sourceTree = "<group>"; };
 		F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTakeVideoVC.m; sourceTree = "<group>"; };
+		F7E785F71A6E23F60038716C /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 			children = (
 				F76B3F2C1A6662AD004135D3 /* AppDelegate.h */,
 				F76B3F2D1A6662AD004135D3 /* AppDelegate.m */,
+				F7E785F71A6E23F60038716C /* 1.mp4 */,
 				F76B3F2F1A6662AD004135D3 /* ViewController.h */,
 				F76B3F301A6662AD004135D3 /* ViewController.m */,
 				F76B3F321A6662AD004135D3 /* Main.storyboard */,
@@ -255,6 +258,7 @@
 				F76B3F391A6662AD004135D3 /* LaunchScreen.xib in Resources */,
 				F76B3F361A6662AD004135D3 /* Images.xcassets in Resources */,
 				F7CE580F1A6CF65C002F7510 /* SVProgressHUD.bundle in Resources */,
+				F7E785F81A6E23F60038716C /* 1.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
