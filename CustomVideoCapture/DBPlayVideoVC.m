@@ -37,7 +37,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor whiteColor];
+    self.view.backgroundColor=[UIColor blackColor];
 
     
     [self initPlayer];//创建播放器
@@ -92,6 +92,7 @@
 }
 -(void)initView
 {
+    
     _startBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [_startBtn setTitle:@"开始" forState:UIControlStateNormal];
     _startBtn.backgroundColor=[UIColor colorWithWhite:0.5 alpha:0.5];
@@ -100,12 +101,23 @@
     [self.view addSubview:_startBtn];
     
     
-    
-    _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 20, 320, 20)];
+    _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 50, 320, 10)];
     _progressView.progress=0;
     [self.view addSubview:_progressView];
     
+    UIButton  *backBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+    [backBtn setTitle:@"返回" forState:UIControlStateNormal];
+    backBtn.frame=CGRectMake(0, 0, 44, 44);
+    [backBtn addTarget:self action:@selector(backBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:backBtn];
 
+}
+
+#pragma mark - BtnClick
+
+-(void)backBtnClick
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 -(void)startBtnClick:(UIButton *)sender
 {

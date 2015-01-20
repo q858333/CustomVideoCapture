@@ -45,14 +45,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    //创建视频存储目录
     [[self class] createVideoFolderIfNotExist];
 
-    
-//    [self mergeAndExportVideosAtFileURLs:@[[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"1.mp4" ofType:nil]],[NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"2.mp4" ofType:nil]]]];
 
-
+    //用来存储视频路径 以便合成时使用
     self.files=[NSMutableArray array];
     
+    //创建视频捕捉窗口
     [self initCapture];
     
     
@@ -68,9 +68,6 @@
     self.captureSession = [[AVCaptureSession alloc]init];
     [_captureSession setSessionPreset:AVCaptureSessionPresetLow];
 
-    
-//    [NSTimer scheduledTimerWithTimeInterval:10 target:self selector:@selector(touchUp) userInfo:nil repeats:NO];
-    
     
     AVCaptureDevice *frontCamera = nil;
     AVCaptureDevice *backCamera = nil;
@@ -162,12 +159,11 @@
     [recordBtn addTarget:self action:@selector(touchUp) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:recordBtn];
     
-    
-    UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-    [playBtn setTitle:@"播放" forState:UIControlStateNormal];
-    playBtn.frame=CGRectMake(320/2, 360, 320/2, 40);
-    [playBtn addTarget:self action:@selector(playBtnClick) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:playBtn];
+//    UIButton *playBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+//    [playBtn setTitle:@"播放" forState:UIControlStateNormal];
+//    playBtn.frame=CGRectMake(320/2, 360, 320/2, 40);
+//    [playBtn addTarget:self action:@selector(playBtnClick) forControlEvents:UIControlEventTouchUpInside];
+//    [self.view addSubview:playBtn];
     
     UIButton *sureBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [sureBtn setTitle:@"完成" forState:UIControlStateNormal];
@@ -176,26 +172,60 @@
     [self.view addSubview:sureBtn];
     
 }
--(void)playBtnClick
+-(void)play
 {
     DBPlayVideoVC *playVideoVC=[[DBPlayVideoVC alloc]init];
     playVideoVC.fileURL=_finashURL;
-    [self presentViewController:playVideoVC animated:YES completion:nil];
-
-//    _player  = [[MPMoviePlayerController alloc] initWithContentURL:_finashURL];
-//    
-//    _player.scalingMode = MPMovieScalingModeAspectFit;
-//    
-//    [self.view addSubview:_player.view];
-//    
-//    [_player setFullscreen:YES animated:YES];
-//    [_player prepareToPlay];
-//    
-//    [_player play];
-
-  
-
+    [self.navigationController pushViewController:playVideoVC animated:YES];
+    
+    //    _player  = [[MPMoviePlayerController alloc] initWithContentURL:_finashURL];
+    //
+    //    _player.scalingMode = MPMovieScalingModeAspectFit;
+    //
+    //    [self.view addSubview:_player.view];
+    //
+    //    [_player setFullscreen:YES animated:YES];
+    //    [_player prepareToPlay];
+    //    
+    //    [_player play];
+    
+    
+    
 }
+
+#pragma mark - BtnClick
+
+-(void)touchUp
+{
+    
+    [_movieFileOutput stopRecording];
+    [self stopCountDurTimer];
+    
+}
+-(void)sureBtnClick
+{
+    
+    [SVProgressHUD showWithStatus:@"请稍等..."];
+    [self mergeAndExportVideosAtFileURLs:self.files];
+    
+}
+-(void)longTouch
+{
+    
+    NSURL *fileURL = [NSURL fileURLWithPath:[[self class] getVideoSaveFilePathString]];
+    [self.files addObject:fileURL];
+    
+    
+    
+    [_movieFileOutput startRecordingToOutputFileURL:fileURL recordingDelegate:self];
+    
+    
+    
+}
+
+
+#pragma mark - 获取视频大小及时长
+
 //此方法可以获取文件的大小，返回的是单位是KB。
 - (CGFloat) getFileSize:(NSString *)path
 {
@@ -219,6 +249,10 @@
     second = urlAsset.duration.value/urlAsset.duration.timescale;
     return second;
 }
+
+#pragma mark - 创建视频目录及文件
+
+
 + (NSString *)getVideoSaveFilePathString
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -240,37 +274,9 @@
     
 }
 
--(void)touchUp
-{
-    
-    [_movieFileOutput stopRecording];
-    [self stopCountDurTimer];
-
-}
--(void)sureBtnClick
-{
-    
-    [SVProgressHUD showWithStatus:@"请稍等..."];
-    [self mergeAndExportVideosAtFileURLs:self.files];
-
-}
--(void)longTouch
-{
-    
-    NSURL *fileURL = [NSURL fileURLWithPath:[[self class] getVideoSaveFilePathString]];
-    [self.files addObject:fileURL];
-    
- 
-        
-    [_movieFileOutput startRecordingToOutputFileURL:fileURL recordingDelegate:self];
-    
-    
-    
-}
-
 + (BOOL)createVideoFolderIfNotExist
 {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+   // NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
    NSString *path =[NSString stringWithFormat:@"%@/tmp/",NSHomeDirectory()];
 
     //[paths objectAtIndex:0];
@@ -293,6 +299,19 @@
     return YES;
 }
 
+
+
+
+
+
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - 合成文件
 - (void)mergeAndExportVideosAtFileURLs:(NSArray *)fileURLArray
 {
     NSError *error = nil;
@@ -308,25 +327,25 @@
     //先去assetTrack 也为了取renderSize
     NSMutableArray *assetTrackArray = [[NSMutableArray alloc] init];
     NSMutableArray *assetArray = [[NSMutableArray alloc] init];
-
+    
     
     for (NSURL *fileURL in fileURLArray)
     {
         
         AVAsset *asset = [AVAsset assetWithURL:fileURL];
-
+        
         if (!asset) {
             continue;
         }
         NSLog(@"%@---%@",asset.tracks,[asset tracksWithMediaType:@"vide"]);
-
+        
         [assetArray addObject:asset];
-
+        
         
         AVAssetTrack *assetTrack = [[asset tracksWithMediaType:@"vide"] objectAtIndex:0];
         
         [assetTrackArray addObject:assetTrack];
-
+        
         renderSize.width = MAX(renderSize.width, assetTrack.naturalSize.height);
         renderSize.height = MAX(renderSize.height, assetTrack.naturalSize.width);
     }
@@ -395,11 +414,12 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             
             _finashURL=mergeFileURL;
-            NSLog(@"%@",mergeFileURL);
             [SVProgressHUD dismiss];
             
+            [self play];
             UISaveVideoAtPathToSavedPhotosAlbum(filePath, self, @selector(video:didFinishSavingWithError:contextInfo:), nil);
-
+            
+            
             
             //            if ([_delegate respondsToSelector:@selector(videoRecorder:didFinishMergingVideosToOutPutFileAtURL:)]) {
             //                [_delegate videoRecorder:self didFinishMergingVideosToOutPutFileAtURL:mergeFileURL];
@@ -407,12 +427,13 @@
         });
     }];
 }
+
 + (NSString *)getVideoMergeFilePathString
 {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-  //  NSLog(@"",);
+    //  NSLog(@"",);
     NSString *path =[NSString stringWithFormat:@"%@/tmp/",NSHomeDirectory()];
-   // [paths objectAtIndex:0];
+    // [paths objectAtIndex:0];
     
     path = [path stringByAppendingPathComponent:VIDEO_FOLDER];
     
@@ -424,6 +445,7 @@
     
     return fileName;
 }
+#pragma mark - 计时器操作
 
 - (void)startCountDurTimer
 {
@@ -453,14 +475,6 @@
     [self.timer invalidate];
     self.timer = nil;
 }
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 
 #pragma mark - AVCaptureFileOutputRecordignDelegate
 - (void)captureOutput:(AVCaptureFileOutput *)captureOutput didStartRecordingToOutputFileAtURL:(NSURL *)fileURL fromConnections:(NSArray *)connections

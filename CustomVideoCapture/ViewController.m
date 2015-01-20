@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    
+    self.view.backgroundColor=[UIColor blackColor];
     
     UIButton *takePhotoBtn = [UIButton buttonWithType:UIButtonTypeSystem];
     [takePhotoBtn setTitle:@"拍照" forState:UIControlStateNormal];
@@ -68,12 +68,15 @@
 -(void)takeVideoBtnClick
 {
     DBTakeVideoVC *takeVideoVC=[[DBTakeVideoVC alloc]init];
-    [self presentViewController:takeVideoVC animated:YES completion:nil];
+    [self.navigationController pushViewController:takeVideoVC animated:YES];
+   // [self presentViewController:takeVideoVC animated:YES completion:nil];
 }
 -(void)takePhotoBtnClick
 {
     DBTakePhotoVC *takePhotoVC=[[DBTakePhotoVC alloc]init];
-    [self presentViewController:takePhotoVC animated:YES completion:nil];
+    [self.navigationController pushViewController:takePhotoVC animated:YES];
+
+    //  [self presentViewController:takePhotoVC animated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning {
