@@ -16,6 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    uint8_t a = 0;
+    int returnValue = SecRandomCopyBytes(kSecRandomDefault, 1, &a);
+    
+    NSLog(@"%d",returnValue);
     // Override point for customization after application launch.
     return YES;
 }

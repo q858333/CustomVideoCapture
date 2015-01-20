@@ -12,6 +12,10 @@
 @interface DBPlayVideoVC ()
 {
    // MPMoviePlayerController *_player;
+    
+    UIProgressView   *_progressView;
+    
+    BOOL  _playBeginState;
 }
 
 @property (nonatomic ,strong) AVPlayer *player;
@@ -31,7 +35,7 @@
     
     self.playerItem = [AVPlayerItem playerItemWithAsset:movieAsset];
     
- //   [self. playerItem addObserver:self forKeyPath:@"status" options:0 context:NULL];
+    [self.playerItem addObserver:self forKeyPath:@"status" options:0 context:NULL];
     
     self.player = [AVPlayer playerWithPlayerItem:self.playerItem];
     
@@ -46,7 +50,10 @@
     [self.player setAllowsExternalPlayback:YES];
     
     
-    [self.player play];
+    _progressView = [[UIProgressView alloc] initWithFrame:CGRectMake(0, 20, 0, 20)];
+    _progressView.progress=1;
+    [self.view addSubview:_progressView];
+    
 
 //   _player  = [[MPMoviePlayerController alloc] initWithContentURL:self.fileURL];
 //    _player.view.frame=CGRectMake(0, 0, 320, 480);
@@ -57,12 +64,73 @@
 //    
 //    [_player play];
 //    [self.view addSubview:_player.view];
-    
   
     
     // Do any additional setup after loading the view.
 }
 
+- (NSTimeInterval) playableDuration
+{
+
+    AVPlayerItem * item = self.playerItem;
+
+    if (item.status == AVPlayerItemStatusReadyToPlay) {
+
+        return CMTimeGetSeconds(self.playerItem.duration);
+
+    }
+
+    else
+
+    {
+
+        return(CMTimeGetSeconds(kCMTimeInvalid));
+
+    }
+
+}
+
+- (NSTimeInterval) playableCurrentTime
+{
+    AVPlayerItem * item = self.playerItem;
+    
+    if (item.status == AVPlayerItemStatusReadyToPlay) {
+        
+        NSLog(@"%f\n",CMTimeGetSeconds(self.playerItem.currentTime));
+        
+        if (!_playBeginState&&CMTimeGetSeconds(self.playerItem.currentTime)==CMTimeGetSeconds(self.playerItem.duration)) {
+            
+            [self.player pause];
+            
+        }
+        
+        _playBeginState = NO;
+        
+        return CMTimeGetSeconds(self.playerItem.currentTime);
+    }
+    else
+    {
+        return(CMTimeGetSeconds(kCMTimeInvalid));
+    }
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"status"])
+    {
+        if (AVPlayerItemStatusReadyToPlay == self.player.currentItem.status)
+        {
+            [self.player play];
+            
+            NSLog(@"%lf",[self playableDuration]);
+            [UIView animateWithDuration:[self playableDuration] animations:^{
+                _progressView.frame=CGRectMake(_progressView.frame.origin.x, _progressView.frame.origin.y, 320, _progressView.frame.size.height);
+            
+            }];
+
+        }
+    }
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
