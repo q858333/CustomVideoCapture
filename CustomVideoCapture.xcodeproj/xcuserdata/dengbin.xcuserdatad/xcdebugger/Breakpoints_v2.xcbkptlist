@@ -58,28 +58,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CustomVideoCapture/DBPlayVideoVC.m"
-            timestampString = "443427562.607315"
+            timestampString = "443429615.196706"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "-playableDuration"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CustomVideoCapture/DBPlayVideoVC.m"
-            timestampString = "443427562.607315"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
-            landmarkName = "-playableCurrentTime"
+            startingLineNumber = "95"
+            endingLineNumber = "95"
+            landmarkName = "-startBtnClick:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
