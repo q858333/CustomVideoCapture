@@ -22,7 +22,7 @@
 		F7CE580A1A6CF57E002F7510 /* DBPlayVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CE58091A6CF57E002F7510 /* DBPlayVideoVC.m */; };
 		F7CE580F1A6CF65C002F7510 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = F7CE580C1A6CF65C002F7510 /* SVProgressHUD.bundle */; };
 		F7CE58101A6CF65C002F7510 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = F7CE580E1A6CF65C002F7510 /* SVProgressHUD.m */; };
-		F7E5F3331A67931E0007C744 /* DBTabkePhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */; };
+		F7E5F3331A67931E0007C744 /* DBTakePhotoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5F3321A67931E0007C744 /* DBTakePhotoVC.m */; };
 		F7E5F3361A67932B0007C744 /* DBTakeVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */; };
 /* End PBXBuildFile section */
 
@@ -61,8 +61,8 @@
 		F7CE580C1A6CF65C002F7510 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
 		F7CE580D1A6CF65C002F7510 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
 		F7CE580E1A6CF65C002F7510 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
-		F7E5F3311A67931E0007C744 /* DBTabkePhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTabkePhotoVC.h; sourceTree = "<group>"; };
-		F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTabkePhotoVC.m; sourceTree = "<group>"; };
+		F7E5F3311A67931E0007C744 /* DBTakePhotoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTakePhotoVC.h; sourceTree = "<group>"; };
+		F7E5F3321A67931E0007C744 /* DBTakePhotoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTakePhotoVC.m; sourceTree = "<group>"; };
 		F7E5F3341A67932B0007C744 /* DBTakeVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBTakeVideoVC.h; sourceTree = "<group>"; };
 		F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBTakeVideoVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,12 +119,8 @@
 				F76B3F2F1A6662AD004135D3 /* ViewController.h */,
 				F76B3F301A6662AD004135D3 /* ViewController.m */,
 				F76B3F321A6662AD004135D3 /* Main.storyboard */,
-				F7E5F3311A67931E0007C744 /* DBTabkePhotoVC.h */,
-				F7E5F3321A67931E0007C744 /* DBTabkePhotoVC.m */,
-				F7E5F3341A67932B0007C744 /* DBTakeVideoVC.h */,
-				F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */,
-				F7CE58081A6CF57E002F7510 /* DBPlayVideoVC.h */,
-				F7CE58091A6CF57E002F7510 /* DBPlayVideoVC.m */,
+				F7E785FC1A6E453C0038716C /* TakePhoto */,
+				F7E785FB1A6E44EF0038716C /* TakeVideo */,
 				F7CE580B1A6CF650002F7510 /* Tools */,
 				F76B3F351A6662AD004135D3 /* Images.xcassets */,
 				F76B3F371A6662AD004135D3 /* LaunchScreen.xib */,
@@ -169,6 +165,26 @@
 				F790A12D1A68F70100551946 /* UIImage+Rotate.m */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		F7E785FB1A6E44EF0038716C /* TakeVideo */ = {
+			isa = PBXGroup;
+			children = (
+				F7E5F3341A67932B0007C744 /* DBTakeVideoVC.h */,
+				F7E5F3351A67932B0007C744 /* DBTakeVideoVC.m */,
+				F7CE58081A6CF57E002F7510 /* DBPlayVideoVC.h */,
+				F7CE58091A6CF57E002F7510 /* DBPlayVideoVC.m */,
+			);
+			name = TakeVideo;
+			sourceTree = "<group>";
+		};
+		F7E785FC1A6E453C0038716C /* TakePhoto */ = {
+			isa = PBXGroup;
+			children = (
+				F7E5F3311A67931E0007C744 /* DBTakePhotoVC.h */,
+				F7E5F3321A67931E0007C744 /* DBTakePhotoVC.m */,
+			);
+			name = TakePhoto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,7 +295,7 @@
 				F76B3F2E1A6662AD004135D3 /* AppDelegate.m in Sources */,
 				F7CE580A1A6CF57E002F7510 /* DBPlayVideoVC.m in Sources */,
 				F76B3F2B1A6662AD004135D3 /* main.m in Sources */,
-				F7E5F3331A67931E0007C744 /* DBTabkePhotoVC.m in Sources */,
+				F7E5F3331A67931E0007C744 /* DBTakePhotoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

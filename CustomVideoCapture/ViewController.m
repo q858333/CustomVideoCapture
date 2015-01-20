@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "DBTabkePhotoVC.h"
+#import "DBTakePhotoVC.h"
 #import "DBTakeVideoVC.h"
 //使用AVFoundation拍照和录制视频的一般步骤如下：
 //创建AVCaptureSession对象。
@@ -72,7 +72,7 @@
 }
 -(void)takePhotoBtnClick
 {
-    DBTabkePhotoVC *takePhotoVC=[[DBTabkePhotoVC alloc]init];
+    DBTakePhotoVC *takePhotoVC=[[DBTakePhotoVC alloc]init];
     [self presentViewController:takePhotoVC animated:YES completion:nil];
 }
 

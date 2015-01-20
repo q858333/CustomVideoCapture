@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <AVFoundation/AVFoundation.h>
 
-@interface DBTabkePhotoVC : UIViewController
+@interface DBTakePhotoVC : UIViewController
 {
     
     

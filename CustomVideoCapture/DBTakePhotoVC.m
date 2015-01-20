@@ -6,13 +6,13 @@
 //  Copyright (c) 2015年 IUAIJIA. All rights reserved.
 //
 
-#import "DBTabkePhotoVC.h"
+#import "DBTakePhotoVC.h"
 #import "UIImage+Rotate.h"
-@interface DBTabkePhotoVC ()
+@interface DBTakePhotoVC ()
 
 @end
 
-@implementation DBTabkePhotoVC
+@implementation DBTakePhotoVC
 //拍照
 //-(void)capture
 //{
