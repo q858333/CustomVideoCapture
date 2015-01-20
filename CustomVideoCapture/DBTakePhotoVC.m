@@ -13,48 +13,7 @@
 @end
 
 @implementation DBTakePhotoVC
-//拍照
-//-(void)capture
-//{
-//    NSLog(@"capture");
-//    
-//    
-//    
-//    AVCaptureConnection *videoConnection = nil;
-//    for (AVCaptureConnection *connection in self.imageOutPut.connections)
-//    {
-//        for (AVCaptureInputPort *port in [connection inputPorts])
-//        {
-//            if ([[port mediaType] isEqual:AVMediaTypeVideo] )
-//            {
-//                videoConnection = connection;
-//                break;
-//            }
-//        }
-//        
-//        if (videoConnection)
-//        {
-//            break;
-//        }
-//    }
-//    
-//    [self.imageOutPut captureStillImageAsynchronouslyFromConnection:videoConnection
-//                                                  completionHandler:
-//     ^(CMSampleBufferRef imageSampleBuffer, NSError *error) {
-//         
-//         //图像数据类型转换
-//         NSData * imageData = [AVCaptureStillImageOutput jpegStillImageNSDataRepresentation:imageSampleBuffer];
-//         UIImage * image = [[UIImage alloc] initWithData:imageData];
-//         
-//         UIImage *image2 = [UIImage imageWithCGImage:image.CGImage scale:1.0 orientation:UIImageOrientationRight];
-//         UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 320)];
-//         imgView.image=image2;
-//         [self.view addSubview:imgView];//         [_delegate wtImagePickerVC:self didPickImage:image];
-//         //         captureButton.userInteractionEnabled = NO;
-//         
-//         
-//     }];
-//}
+
 
 //定义闪光灯开闭及自动模式功能，注意无论是设置闪光灯、白平衡还是其他输入设备属性，在设置之前必须先锁定配置，修改完后解锁。
 /** *  改变设备属性的统一操作方法 * *  @param propertyChange 属性改变操作 */
@@ -87,6 +46,14 @@
 //     }];
 //}
 
+
+- (void)viewDidLoad {
+    
+    
+    [super viewDidLoad];
+    
+    self.view.backgroundColor=[UIColor whiteColor];
+}
 -(void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
@@ -94,12 +61,8 @@
     
     [self initCapture];
     [self initView];
- //   [self start];
-    
-   // [layer insertSublayer:_captureVideoPreviewLayer below:self.focusCursor.layer];
-//    [self addNotificationToCaptureDevice:captureDevice];
+
     [self addGenstureRecognizer];
-//    [self setFlashModeButtonStatus];
 }
 -(void)initView
 {
@@ -240,18 +203,6 @@
 {
 
 
-//    
-//    AVCaptureConnection *videoConnection = nil;
-//    for (AVCaptureConnection *connection in self.captureStillImageOutput.connections)
-//    {
-//        for (AVCaptureInputPort *port in [connection inputPorts]) {
-//            if ([[port mediaType] isEqual:AVMediaTypeVideo] ) {
-//                videoConnection = connection;
-//                break;
-//            }
-//        }
-//        if (videoConnection) { break; }
-//    }
     //根据设备输出获得连接
     AVCaptureConnection *videoConnection=[self.captureStillImageOutput connectionWithMediaType:AVMediaTypeVideo];
     
@@ -266,21 +217,18 @@
              [UIImage rotateImage:image];
              //  [self.captureSession stopRunning];
              UIImageView *imgView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 44, 320, 320)];
-             //   imgView.image=[self scaleImage:image toScale:<#(float)#>];
              imgView.contentMode=UIViewContentModeScaleAspectFill;
-             
+             imgView.userInteractionEnabled=YES;
              [self.view addSubview:imgView];
              imgView.image=image;
              
-             // = [UIImage imageWithCGImage:CGImageCreateWithImageInRect([image CGImage], CGRectMake(0, 44, 320, 320)) scale:1 orientation:UIImageOrientationRight];
-             //             [UIimage imagewidthCGImage:CGImageCreateWidthImageInRec]
-             //             [UIimage imagewidthCGImage:CGImageCreateWidthImageInRect:(,矩形)]
+             UITapGestureRecognizer *tapGR=[[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapImgView)];
+             [imgView addGestureRecognizer:tapGR];
              
              
+             //保存图片
               UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil);
-             
-//                         ALAssetsLibrary *assetsLibrary=[[ALAssetsLibrary alloc]init];
-//                         [assetsLibrary writeImageToSavedPhotosAlbum:[image CGImage] orientation:(ALAssetOrientation)[image imageOrientation] completionBlock:nil];
+
              
          }
      }];
@@ -290,75 +238,13 @@
     
 }
 
-
-#pragma mark 切换前后摄像头
-
-- (void)toggleButtonClick
+-(void)tapImgView
 {
-    AVCaptureDevice *currentDevice=[self.captureDeviceInput device];
-    AVCaptureDevicePosition currentPosition=[currentDevice position];
-    
-    AVCaptureDevice *toChangeDevice;
-    AVCaptureDevicePosition toChangePosition=AVCaptureDevicePositionFront;
-    if (currentPosition==AVCaptureDevicePositionUnspecified||currentPosition==AVCaptureDevicePositionFront)
-    {
-        toChangePosition=AVCaptureDevicePositionBack;
-    }
-    toChangeDevice=[self getCameraDeviceWithPosition:toChangePosition];
-    //获得要调整的设备输入对象
-    AVCaptureDeviceInput *toChangeDeviceInput=[[AVCaptureDeviceInput alloc]initWithDevice:toChangeDevice error:nil];
-    //改变会话的配置前一定要先开启配置，配置完成后提交配置改变
-    [self.captureSession beginConfiguration];
-    //移除原有输入对象
-    [self.captureSession removeInput:self.captureDeviceInput];
-    //添加新的输入对象
-    if ([self.captureSession canAddInput:toChangeDeviceInput])
-    {
-        [self.captureSession addInput:toChangeDeviceInput];
-        self.captureDeviceInput=toChangeDeviceInput;
-    }
-    //提交会话配置
-    [self.captureSession commitConfiguration];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
-//#pragma mark 切换前后摄像头
-//- (IBAction)toggleButtonClick:(UIButton *)sender
-//{
-//    AVCaptureDevice *currentDevice=[self.captureDeviceInput device];
-//    AVCaptureDevicePosition currentPosition=[currentDevice position];
-//    [self removeNotificationFromCaptureDevice:currentDevice];
-//    AVCaptureDevice *toChangeDevice;
-//    AVCaptureDevicePosition toChangePosition=AVCaptureDevicePositionFront;
-//    
-//    if (currentPosition==AVCaptureDevicePositionUnspecified||currentPosition==AVCaptureDevicePositionFront)
-//    {
-//        toChangePosition=AVCaptureDevicePositionBack;
-//    }
-//    toChangeDevice=[self getCameraDeviceWithPosition:toChangePosition];
-//    [self addNotificationToCaptureDevice:toChangeDevice];
-//    //获得要调整的设备输入对象
-//    AVCaptureDeviceInput *toChangeDeviceInput=[[AVCaptureDeviceInput alloc]initWithDevice:toChangeDevice error:nil];
-//    //改变会话的配置前一定要先开启配置，配置完成后提交配置改变
-//    [self.captureSession beginConfiguration];
-//    //移除原有输入对象
-//    [self.captureSession removeInput:self.captureDeviceInput];
-//    //添加新的输入对象
-//    if ([self.captureSession canAddInput:toChangeDeviceInput])
-//    {
-//        [self.captureSession addInput:toChangeDeviceInput];
-//        self.captureDeviceInput=toChangeDeviceInput;
-//    }    //提交会话配置
-//    [self.captureSession commitConfiguration];
-//    [self setFlashModeButtonStatus];}
-//
 
-- (void)viewDidLoad {
-    
-    
-    [super viewDidLoad];
-    
-    self.view.backgroundColor=[UIColor whiteColor];
-    // Do any additional setup after loading the view.
-}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -455,7 +341,8 @@
 /** *  添加点按手势，点按时聚焦 */
 -(void)addGenstureRecognizer
 {
-    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScreen:)];    [self.containerView addGestureRecognizer:tapGesture];
+    UITapGestureRecognizer *tapGesture=[[UITapGestureRecognizer alloc]initWithTarget:self action:@selector(tapScreen:)];
+    [self.containerView addGestureRecognizer:tapGesture];
 }
 -(void)tapScreen:(UITapGestureRecognizer *)tapGesture
 {
@@ -499,6 +386,37 @@
 - (void)captureOutput:(AVCaptureOutput *)captureOutput didOutputMetadataObjects:(NSArray *)metadataObjects fromConnection:(AVCaptureConnection *)connection
 {
     
+}
+
+
+#pragma mark - 切换前后摄像头
+
+- (void)toggleButtonClick
+{
+    AVCaptureDevice *currentDevice=[self.captureDeviceInput device];
+    AVCaptureDevicePosition currentPosition=[currentDevice position];
+    
+    AVCaptureDevice *toChangeDevice;
+    AVCaptureDevicePosition toChangePosition=AVCaptureDevicePositionFront;
+    if (currentPosition==AVCaptureDevicePositionUnspecified||currentPosition==AVCaptureDevicePositionFront)
+    {
+        toChangePosition=AVCaptureDevicePositionBack;
+    }
+    toChangeDevice=[self getCameraDeviceWithPosition:toChangePosition];
+    //获得要调整的设备输入对象
+    AVCaptureDeviceInput *toChangeDeviceInput=[[AVCaptureDeviceInput alloc]initWithDevice:toChangeDevice error:nil];
+    //改变会话的配置前一定要先开启配置，配置完成后提交配置改变
+    [self.captureSession beginConfiguration];
+    //移除原有输入对象
+    [self.captureSession removeInput:self.captureDeviceInput];
+    //添加新的输入对象
+    if ([self.captureSession canAddInput:toChangeDeviceInput])
+    {
+        [self.captureSession addInput:toChangeDeviceInput];
+        self.captureDeviceInput=toChangeDeviceInput;
+    }
+    //提交会话配置
+    [self.captureSession commitConfiguration];
 }
 /*
 #pragma mark - Navigation
