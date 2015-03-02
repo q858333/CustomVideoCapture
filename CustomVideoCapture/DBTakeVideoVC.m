@@ -43,6 +43,9 @@
 @implementation DBTakeVideoVC
 
 - (void)viewDidLoad {
+    
+    
+
     [super viewDidLoad];
     
     //创建视频存储目录
@@ -174,7 +177,9 @@
 {
     DBPlayVideoVC *playVideoVC=[[DBPlayVideoVC alloc]init];
     playVideoVC.fileURL=_finashURL;
-    [self.navigationController pushViewController:playVideoVC animated:YES];
+    
+    [self presentViewController:playVideoVC animated:YES completion:nil];
+   // [self.navigationController pushViewController:playVideoVC animated:YES];
     
     //    _player  = [[MPMoviePlayerController alloc] initWithContentURL:_finashURL];
     //
@@ -212,8 +217,6 @@
     
     NSURL *fileURL = [NSURL fileURLWithPath:[[self class] getVideoSaveFilePathString]];
     [self.files addObject:fileURL];
-    
-    
     
     [_movieFileOutput startRecordingToOutputFileURL:fileURL recordingDelegate:self];
     

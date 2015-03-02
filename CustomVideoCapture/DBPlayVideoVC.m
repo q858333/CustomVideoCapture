@@ -14,7 +14,7 @@
 
 @interface DBPlayVideoVC ()
 {
-   // MPMoviePlayerController *_player;
+    MPMoviePlayerController *_mp_player;
     
     UIProgressView   *_progressView;
     UIButton         *_startBtn;
@@ -37,7 +37,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor=[UIColor blackColor];
+    self.view.backgroundColor=[UIColor redColor];
 
     
     [self initPlayer];//创建播放器
@@ -50,20 +50,25 @@
                                                object: self.playerItem];
     
 
-//   _player  = [[MPMoviePlayerController alloc] initWithContentURL:self.fileURL];
-//    _player.view.frame=CGRectMake(0, 0, 320, 480);
+//   _mp_player  = [[MPMoviePlayerController alloc] initWithContentURL:self.fileURL];
+//    _mp_player.view.frame=CGRectMake(0, 0, 200, 200);
 //    
-// //   _player.scalingMode = MPMovieScalingModeAspectFit;
-//  //  [_player setFullscreen:YES animated:YES];
-//    [_player prepareToPlay];
+//    _mp_player.scalingMode = MPMovieScalingModeAspectFit;
+//    [_mp_player setFullscreen:YES animated:YES];
+//    [_mp_player prepareToPlay];
 //    
-//    [_player play];
-//    [self.view addSubview:_player.view];
+//    [_mp_player play];
+//    [self.view addSubview:_mp_player.view];
   
     
     // Do any additional setup after loading the view.
 }
-
+//横评播放
+//- (NSUInteger)supportedInterfaceOrientations
+//{
+//    
+//    return UIInterfaceOrientationMaskLandscape;
+//}
 -(void)initPlayer
 {
     

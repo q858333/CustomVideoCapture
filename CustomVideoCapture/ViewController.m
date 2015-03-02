@@ -16,15 +16,27 @@
 @interface ViewController ()
 {
 }
-
 @end
 
 @implementation ViewController
-
+//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
+//{
+//    return YES;
+//}
+//- (NSUInteger)supportedInterfaceOrientations {
+//    //    CGRect bounds = self.view.bounds;
+//    
+//    return UIInterfaceOrientationMaskPortrait;
+//}
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+
+    
+    
+    
     
     self.view.backgroundColor=[UIColor blackColor];
     
@@ -36,15 +48,16 @@
     
     
     UIButton *takeVideoBtn = [UIButton buttonWithType:UIButtonTypeSystem];
+
     [takeVideoBtn setTitle:@"录像" forState:UIControlStateNormal];
     [takeVideoBtn addTarget:self action:@selector(takeVideoBtnClick) forControlEvents:UIControlEventTouchUpInside];
     takeVideoBtn.frame=CGRectMake(0, 200, 320, 50);
     [self.view addSubview:takeVideoBtn];
     
-
+   
     
     
-//    
+//
 //    self.imageOutPut = [[AVCaptureStillImageOutput alloc] init];
 //    NSDictionary *outputSettings = @{ AVVideoCodecKey : AVVideoCodecJPEG};
 //    [self.imageOutPut setOutputSettings:outputSettings];
