@@ -19,15 +19,7 @@
 @end
 
 @implementation ViewController
-//- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    return YES;
-//}
-//- (NSUInteger)supportedInterfaceOrientations {
-//    //    CGRect bounds = self.view.bounds;
-//    
-//    return UIInterfaceOrientationMaskPortrait;
-//}
+
 
 
 - (void)viewDidLoad {

@@ -31,6 +31,7 @@
 @end
 
 @implementation DBPlayVideoVC
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -61,7 +62,6 @@
 //    [self.view addSubview:_mp_player.view];
   
     
-    // Do any additional setup after loading the view.
 }
 //横评播放
 //- (NSUInteger)supportedInterfaceOrientations
