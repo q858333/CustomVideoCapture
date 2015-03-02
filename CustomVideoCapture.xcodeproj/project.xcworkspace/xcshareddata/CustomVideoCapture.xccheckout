@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>5BA98C9D-B03F-4545-90A6-5FC783C4F2AE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CustomVideoCapture</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>F25EF80CB765C0A771D93AEEFE83A8C1CAA0B6FB</key>
+		<string>https://github.com/q858333/CustomVideoCapture.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CustomVideoCapture.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>F25EF80CB765C0A771D93AEEFE83A8C1CAA0B6FB</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/q858333/CustomVideoCapture.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>F25EF80CB765C0A771D93AEEFE83A8C1CAA0B6FB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>F25EF80CB765C0A771D93AEEFE83A8C1CAA0B6FB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CustomVideoCapture</string>
+		</dict>
+	</array>
+</dict>
+</plist>
