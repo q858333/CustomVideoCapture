@@ -1,3 +1,6 @@
+# AVAudioSession setCategory 各种用途
+https://guiyongdong.github.io/2019/07/19/%E3%80%90%E8%BD%AC%E3%80%91AVAudioSession-Category%E5%90%84%E7%A7%8D%E5%A7%BF%E5%8A%BF/
+
 # CustomVideoCapture
 利用AVFoundation 实现视频的录制，播放功能和相机拍照功能。 
 
